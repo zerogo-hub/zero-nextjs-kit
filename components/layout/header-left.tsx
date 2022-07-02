@@ -1,22 +1,38 @@
+import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import styles from './header.module.css';
 
-
-const { Item } = Menu;
-
 const HeaderLeft = () => {
     const { t } = useTranslation('layout');
 
-    return (
-        <Menu className={styles['left-menu']} mode="horizontal" theme="light" defaultSelectedKeys={['home']} >
-            <Item key="home">
+    const items: MenuProps['items'] = [
+        {
+            key: 'home',
+            label: (
                 <Link href="/">
                     <a><span className={styles['menu-left-text']}>{t('home')}</span></a>
                 </Link>
-            </Item>
-        </Menu>
+            ),
+        },
+        {
+            key: 'about',
+            label: (
+                <Link href="/about">
+                    <a><span className={styles['menu-left-text']}>{t('about')}</span></a>
+                </Link>
+            ),
+        }
+    ];
+
+    return (
+        <Menu
+            className={styles['left-menu']}
+            mode="horizontal"
+            theme="light"
+            items={items}
+        />
     );
 };
 

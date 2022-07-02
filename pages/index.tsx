@@ -11,6 +11,7 @@ const Index = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  // TODO 可以添加 web 请求
   return {
     props: {
       ...(await serverSideTranslations(locale || i18n.defaultLocale, ['common', 'layout', 'home']))
