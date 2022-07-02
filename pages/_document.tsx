@@ -1,12 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-import React from 'react';
-
-/** 
- * 屏蔽警告: useLayoutEffect warning on the server side rendering with nextjs
- * 
- * antd 4.16.x + next.js 会有此警告
- */
-React.useLayoutEffect = React.useEffect;
 class MyDocument extends Document {
   render() {
     return (
