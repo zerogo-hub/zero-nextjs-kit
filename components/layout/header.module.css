@@ -1,0 +1,23 @@
+.header {
+    @apply bg-white;
+}
+
+.menus {
+    @apply mt-4;
+}
+
+.left-menu {
+    @apply float-left;
+}
+
+.right-menu {
+    @apply float-right;
+}
+
+.menu-left-text {
+    @apply text-lg;
+}
+
+.menu-right-text {
+    @apply text-base;
+}

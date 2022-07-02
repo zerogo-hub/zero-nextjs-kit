@@ -1,0 +1,11 @@
+.layout {
+    @apply bg-white ml-1 md:ml-12 lg:ml-24 xl:ml-36 mr-1 md:mr-14 lg:mr-24 xl:mr-36;
+}
+
+.content {
+    @apply pt-8 min-h-screen ;
+}
+
+.container-content {
+    @apply md:ml-3 md:mr-3;
+}
