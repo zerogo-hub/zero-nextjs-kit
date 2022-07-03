@@ -9,6 +9,7 @@ import 'tailwindcss/tailwind.css';
 import Layout from '../components/layout';
 import { createStore, Store } from '../stores';
 import '../styles/site.css';
+import '../styles/tailwind.css';
 
 class MyApp extends App {
 

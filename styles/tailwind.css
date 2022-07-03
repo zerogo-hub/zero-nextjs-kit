@@ -1,0 +1,10 @@
+@tailwind base;
+
+svg {
+    vertical-align: initial;
+}
+
+button {
+    background-color: transparent;
+}
+
