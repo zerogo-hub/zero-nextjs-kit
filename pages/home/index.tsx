@@ -1,7 +1,9 @@
-
 import { Input } from 'antd';
+import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Meta from '../../components/meta';
+import { i18n } from '../../next-i18next.config';
 import styles from './index.module.css';
 
 const Home = () => {
@@ -22,6 +24,13 @@ const Home = () => {
   );
 };
 
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || i18n.defaultLocale, ['layout']))
+    }
+  };
+};
 
 
 export default Home;
