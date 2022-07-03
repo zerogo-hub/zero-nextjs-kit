@@ -1,25 +1,41 @@
-import { GetStaticProps } from 'next';
+import { Button, Input } from 'antd';
+import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { i18n } from '../next-i18next.config';
-import Home from './home';
+import Meta from '../components/meta';
+import styles from './index.module.css';
+
+const Home = () => {
+
+  const { t } = useTranslation('layout');
 
 
-const Index = () => {
   return (
-    <Home />
+    <>
+      <Meta title={t('home')} keywords="" description="" />
+      <div className={styles.home}>
+        <h2>Welcome zero-nextjs-kit</h2>
+      </div>
+      <div className='mt-8'>
+        <Input placeholder='Welcome zero-nextjs-kit' />
+      </div>
+      <div className='mt-8'>
+        <Button.Group>
+          <Button type="primary">btn primary</Button>
+          <Button type='default'>btn default</Button>
+          <Button danger>btn danger</Button>
+        </Button.Group>
+      </div>
+    </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  // TODO 可以添加 web 请求
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || i18n.defaultLocale, ['common', 'layout', 'home']))
-    },
-    // https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
-    // 半小时重构一次
-    revalidate: 1800,
+      ...(await serverSideTranslations(locale || 'en', ['layout']))
+    }
   };
 };
 
-export default Index;
+export default Home;

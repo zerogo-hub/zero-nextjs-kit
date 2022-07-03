@@ -4,8 +4,6 @@ import Footer from './footer';
 import Header from './header';
 import styles from './index.module.css';
 
-
-
 const { Content } = Layout;
 interface Props {
   children: React.ReactNode;

@@ -1,4 +1,5 @@
 import { ConfigProvider } from 'antd';
+
 import 'antd/dist/antd.css';
 import enUS from 'antd/lib/locale/en_US';
 import { Provider } from 'mobx-react';
