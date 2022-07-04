@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+.stats
+build
+debug
+logs
+node_modules
+npm-debug.log
+run
+.run/
+.vscode/
+.eslintrc.js
+.huskyrc.js
+.prettierrc.js
+README.md
